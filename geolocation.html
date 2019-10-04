@@ -31,7 +31,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
    maxZoom: 18,
    id: 'mapbox.streets',
-   accessToken: 'Put API_KEY here'
+   accessToken: 'pk.eyJ1IjoidGhlYWNyb2NrZXR0IiwiYSI6ImNrMG42ZmI5ZzFlaXMzaXFvcnZ1MHp0MzcifQ.yGr6uZCm9ZVh3PMy_c1_kA'
 }).addTo(map);
 
 map.locate({setView: true, maxZoom: 16});
@@ -53,8 +53,1769 @@ function onLocationError(e) {
 
 map.on('locationerror', onLocationError);
 
+// var myLayer = L.geoJSON().addTo(map);
+//   myLayer.addData(geoJsonFeature);
+
+  var geojsonMarkerOptions = {
+	radius: 8,
+	fillColor: "#ff7800",
+	color: "#000",
+	weight: 1,
+	opacity: 1,
+	fillOpacity: 0.8
+};
+// start of data////////////////////////////////////////////////////////////////////////
+var geoJsonFeature={
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8742945,34.89426961 ]
+    },
+    "properties": {
+    "restaurant":"Picazzo's Healthy Italian Kitchen",
+    "address":"1855 Arizona 89A, Sedona, AZ 86336",
+    "tel":"(928) 282-4140"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6482982,35.1991384 ]
+    },
+    "properties": {
+    "restaurant":"diablo burger",
+    "address":"120 N Leroux St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-3274"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6377409,35.28940688 ]
+    },
+    "properties": {
+    "restaurant":"The Toasted Owl Cafe",
+    "address":"12 S Mikes Pike St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-5326"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6482982,35.1991384 ]
+    },
+    "properties": {
+    "restaurant":"Mix Flagstaff",
+    "address":"120 N Leroux St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-8200"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6488263,35.1975636 ]
+    },
+    "properties": {
+    "restaurant":"Karma Sushi Bar Grill",
+    "address":"6 E Route 66, Flagstaff, AZ 86001",
+    "tel":"(928) 774-6100"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6509703,35.1964291 ]
+    },
+    "properties": {
+    "restaurant":"Beaver Street Brewery",
+    "address":"11 Beaver St #1, Flagstaff, AZ 86001",
+    "tel":"(928) 779-0079"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6476986,35.1977532 ]
+    },
+    "properties": {
+    "restaurant":"Criollo Latin Kitchen",
+    "address":"16 N San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-0541"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6486708,35.195685 ]
+    },
+    "properties": {
+    "restaurant":"Tinderbox Kitchen",
+    "address":"34 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 226-8400"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.648768,35.195475 ]
+    },
+    "properties": {
+    "restaurant":"Tourist Home Urban Market",
+    "address":"52 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 779-2811"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.648978,35.1950096 ]
+    },
+    "properties": {
+    "restaurant":"Proper Meats + Provisions",
+    "address":"110 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-9001"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6482012,35.1960907 ]
+    },
+    "properties": {
+    "restaurant":"The Pizza Patio",
+    "address":"109 E Phoenix Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 779-4000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6485004,35.1965863 ]
+    },
+    "properties": {
+    "restaurant":"Lumberyard Brewing Co",
+    "address":"5 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 779-2739"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6144411,35.2050154 ]
+    },
+    "properties": {
+    "restaurant":"Fat Olives",
+    "address":"2308 Route 66 East, Flagstaff, Arizona 86004",
+    "tel":"(928) 853-0056"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6606832,35.1905351]
+    },
+    "properties": {
+    "restaurant":"Smashburger",
+    "address":"1020 South Milton Road, Suite 102, Flagstaff, AZ 86001",
+    "tel":"(928) 433-4060"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.668542,35.1770293 ]
+    },
+    "properties": {
+    "restaurant":"Your Pie",
+    "address":"2619 S Woodlands Village Blvd Suite #650, Flagstaff, AZ 86001",
+    "tel":"(928) 440-5500"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.662584,35.1791738 ]
+    },
+    "properties": {
+    "restaurant":"Coco's Bakery Restaurant",
+    "address":"360 W Forest Meadows St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-8886"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6432477,35.1958357 ]
+    },
+    "properties": {
+    "restaurant":"Kachina Restaurant",
+    "address":"522 E Rte 66, Flagstaff, AZ 86001",
+    "tel":"(928) 779-1944"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6462732,35.2012565 ]
+    },
+    "properties": {
+    "restaurant":"Brix",
+    "address":"413 N San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 213-1021"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6516387,35.1969379 ]
+    },
+    "properties": {
+    "restaurant":"Fratelli Pizza",
+    "address":"119 W Phoenix Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 774-9200"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6505008,35.1966988 ]
+    },
+    "properties": {
+    "restaurant":"Nomads Global Lounge",
+    "address":"19 W Phoenix Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 774-7958"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6487262,35.1987376 ]
+    },
+    "properties": {
+    "restaurant":"La Vetta Ristorante Italiano",
+    "address":"103 N Leroux St, Flagstaff, AZ 86001",
+    "tel":"(928) 440-5280"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6154284,35.2038656 ]
+    },
+    "properties": {
+    "restaurant":"Salsa Brava",
+    "address":"2220 E W Rte 66, Flagstaff, AZ 86004",
+    "tel":"(928) 779-5293"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.648978,35.1950096 ]
+    },
+    "properties": {
+    "restaurant":"Ewa's Thai Cuisine, LLC.",
+    "address":"110 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-4060"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6504618,35.1971699 ]
+    },
+    "properties": {
+    "restaurant":"Altitudes Bar & Grill",
+    "address":"2 Beaver St, Flagstaff, AZ 86001",
+    "tel":"(928) 214-8218"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6680942,35.1780371 ]
+    },
+    "properties": {
+    "restaurant":"Delhi Palace",
+    "address":"2500 S Woodlands Village Blvd #8, Flagstaff, AZ 86001",
+    "tel":"(928) 556-0019"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6508028,35.1963211 ]
+    },
+    "properties": {
+    "restaurant":"Macy's Eurpean Coffeehouse",
+    "address":"14 Beaver St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-2243"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6504433,35.1923208 ]
+    },
+    "properties": {
+    "restaurant":"The Mayor",
+    "address":"409 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-3846"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6611679,35.1829672 ]
+    },
+    "properties": {
+    "restaurant":"Campus Coffee Bean and Grill",
+    "address":"1800 S Milton Rd, Flagstaff, AZ 86001",
+    "tel":"(928) 556-0660"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.649623,35.199469 ]
+    },
+    "properties": {
+    "restaurant":"Dark Sky Brewing Co.",
+    "address":"117 N Beaver St A, Flagstaff, AZ 86001",
+    "tel":"(928) 235-4525"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.649677,35.1997499 ]
+    },
+    "properties": {
+    "restaurant":"India Palace",
+    "address":"103 W Birch Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 774-0081"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6472155,35.1979124 ]
+    },
+    "properties": {
+    "restaurant":"Mozelle's Downtown Bakery",
+    "address":"111 E Aspen Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 607-7855"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6490695,35.1952937 ]
+    },
+    "properties": {
+    "restaurant":"Root Public House",
+    "address":"101 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-1402"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6417381,35.1915515 ]
+    },
+    "properties": {
+    "restaurant":"Pita Jungle",
+    "address":"320 Regent St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-0086"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6599146,35.1864606 ]
+    },
+    "properties": {
+    "restaurant":"Oscars Burritos Fiesta",
+    "address":"1500 South Riordan Ranch Street, Flagstaff, AZ 86001",
+    "tel":"(928) 774-3600"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6613141,35.187664 ]
+    },
+    "properties": {
+    "restaurant":"Lone Spur Cafe",
+    "address":"1300 S Milton Rd, Flagstaff, AZ 86001",
+    "tel":"(928) 440-5330"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6634614,35.1873989 ]
+    },
+    "properties": {
+    "restaurant":"Hiro's Sushi",
+    "address":"1312 S Plaza Way, Flagstaff, AZ 86001",
+    "tel":"(928) 226-8030"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6617082,35.1863958 ]
+    },
+    "properties": {
+    "restaurant":"Hickory's Smokehouse BBQ",
+    "address":"1435 S Milton Rd, Flagstaff, AZ 86001",
+    "tel":"(928) 774-2278"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6242971,35.1923654 ]
+    },
+    "properties": {
+    "restaurant":"The Northern Pines Restaurant",
+    "address":"2200 E Butler Ave, Flagstaff, AZ 86004",
+    "tel":"(928) 266-1929"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6197422,35.191559 ]
+    },
+    "properties": {
+    "restaurant":"Western Gold Restaurant",
+    "address":"2515 East Butler Avenue, Flagstaff, AZ 86004",
+    "tel":"(928) 779-7979"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6429835,35.1912551 ]
+    },
+    "properties": {
+    "restaurant":"Grimaldi's Pizzeria",
+    "address":"601 Piccadilly Dr #55, Flagstaff, AZ 86001",
+    "tel":"(928) 774-9038"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6211394,35.2182007 ]
+    },
+    "properties": {
+    "restaurant":"Brandy's Restaurant & Bakery",
+    "address":"1500 E Cedar Ave, Flagstaff, AZ 86004",
+    "tel":"(928) 779-2187"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.3847983,35.38762219 ]
+    },
+    "properties": {
+    "restaurant":"Eat n' Run Route 66 Market & Cafe",
+    "address":"2400 Historic Rte 66, Flagstaff, AZ 86004",
+    "tel":"(928) 679-9818"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.5862801,35.2185747 ]
+    },
+    "properties": {
+    "restaurant":"Historic Brewing Company",
+    "address":"4366 E Huntington Dr, Flagstaff, AZ 86004",
+    "tel":"(855) 484-4677"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.5476732,35.26507619 ]
+    },
+    "properties": {
+    "restaurant":"The Horsemen Lodge Steakhouse",
+    "address":"8500 US-89, Flagstaff, AZ 86004",
+    "tel":"(928) 526-2655"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.5793985,35.21432 ]
+    },
+    "properties": {
+    "restaurant":"Oregano's Pizza Bistro",
+    "address":"980 N Country Club Dr, Flagstaff, AZ 86004",
+    "tel":"(928) 233-3000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.5764441,35.2123599 ]
+    },
+    "properties": {
+    "restaurant":"The Toasted Owl - East Side",
+    "address":"5200 E Cortland Blvd, Flagstaff, AZ 86004",
+    "tel":"(928) 526-0610"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7557912,34.8741109 ]
+    },
+    "properties": {
+    "restaurant":"Indian Gardens Cafe & Market",
+    "address":"3951 N State Rte 89A, Sedona, AZ 86336",
+    "tel":"(928) 282-7702"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7524593,34.87714221 ]
+    },
+    "properties": {
+    "restaurant":"Sedona Pizza Company",
+    "address":"320 N State Rte 89A, Sedona, AZ 86336",
+    "tel":"(928) 203-5656"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.852706,34.91396456 ]
+    },
+    "properties": {
+    "restaurant":"Tii Gavo at Enchantment Resort",
+    "address":"525 Boynton Canyon Road, Sedona, AZ 86336",
+    "tel":"(844) 244-9489"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.852706,34.91396456 ]
+    },
+    "properties": {
+    "restaurant":"Che Ah Chi",
+    "address":"525 Boynton Canyon Rd, Sedona, AZ 86336",
+    "tel":"(928) 204-6000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8742945,34.89426961 ]
+    },
+    "properties": {
+    "restaurant":"Picazzo's Healthy Italian Kitchen",
+    "address":"1855 Arizona 89A, Sedona, AZ 86336",
+    "tel":"(928) 282-4140"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6482982,35.1991384 ]
+    },
+    "properties": {
+    "restaurant":"diablo burger",
+    "address":"120 N Leroux St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-3274"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6377409,35.28940688 ]
+    },
+    "properties": {
+    "restaurant":"The Toasted Owl Cafe",
+    "address":"12 S Mikes Pike St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-5326"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6482982,35.1991384 ]
+    },
+    "properties": {
+    "restaurant":"Mix Flagstaff",
+    "address":"120 N Leroux St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-8200"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6488263,35.1975636 ]
+    },
+    "properties": {
+    "restaurant":"Karma Sushi Bar Grill",
+    "address":"6 E Route 66, Flagstaff, AZ 86001",
+    "tel":"(928) 774-6100"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6509703,35.1964291 ]
+    },
+    "properties": {
+    "restaurant":"Beaver Street Brewery",
+    "address":"11 Beaver St #1, Flagstaff, AZ 86001",
+    "tel":"(928) 779-0079"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6476986,35.1977532 ]
+    },
+    "properties": {
+    "restaurant":"Criollo Latin Kitchen",
+    "address":"16 N San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-0541"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6486708,35.195685 ]
+    },
+    "properties": {
+    "restaurant":"Tinderbox Kitchen",
+    "address":"34 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 226-8400"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.648768,35.195475 ]
+    },
+    "properties": {
+    "restaurant":"Tourist Home Urban Market",
+    "address":"52 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 779-2811"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.648978,35.1950096 ]
+    },
+    "properties": {
+    "restaurant":"Proper Meats + Provisions",
+    "address":"110 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-9001"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6482012,35.1960907 ]
+    },
+    "properties": {
+    "restaurant":"The Pizza Patio",
+    "address":"109 E Phoenix Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 779-4000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6485004,35.1965863 ]
+    },
+    "properties": {
+    "restaurant":"Lumberyard Brewing Co",
+    "address":"5 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 779-2739"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6144411,35.2050154 ]
+    },
+    "properties": {
+    "restaurant":"Fat Olives",
+    "address":"2308 Route 66 East, Flagstaff, Arizona 86004",
+    "tel":"(928) 853-0056"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.668542,35.1770293 ]
+    },
+    "properties": {
+    "restaurant":"Your Pie",
+    "address":"2619 S Woodlands Village Blvd Suite #650, Flagstaff, AZ 86001",
+    "tel":"(928) 440-5500"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.662584,35.1791738 ]
+    },
+    "properties": {
+    "restaurant":"Coco's Bakery Restaurant",
+    "address":"360 W Forest Meadows St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-8886"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6432477,35.1958357 ]
+    },
+    "properties": {
+    "restaurant":"Kachina Restaurant",
+    "address":"522 E Rte 66, Flagstaff, AZ 86001",
+    "tel":"(928) 779-1944"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6462732,35.2012565 ]
+    },
+    "properties": {
+    "restaurant":"Brix",
+    "address":"413 N San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 213-1021"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6516387,35.1969379 ]
+    },
+    "properties": {
+    "restaurant":"Fratelli Pizza",
+    "address":"119 W Phoenix Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 774-9200"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6505008,35.1966988 ]
+    },
+    "properties": {
+    "restaurant":"Nomads Global Lounge",
+    "address":"19 W Phoenix Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 774-7958"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6487262,35.1987376 ]
+    },
+    "properties": {
+    "restaurant":"La Vetta Ristorante Italiano",
+    "address":"103 N Leroux St, Flagstaff, AZ 86001",
+    "tel":"(928) 440-5280"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6154284,35.2038656 ]
+    },
+    "properties": {
+    "restaurant":"Salsa Brava",
+    "address":"2220 E W Rte 66, Flagstaff, AZ 86004",
+    "tel":"(928) 779-5293"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.648978,35.1950096 ]
+    },
+    "properties": {
+    "restaurant":"Ewa's Thai Cuisine, LLC.",
+    "address":"110 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-4060"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6504618,35.1971699 ]
+    },
+    "properties": {
+    "restaurant":"Altitudes Bar & Grill",
+    "address":"2 Beaver St, Flagstaff, AZ 86001",
+    "tel":"(928) 214-8218"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6680942,35.1780371 ]
+    },
+    "properties": {
+    "restaurant":"Delhi Palace",
+    "address":"2500 S Woodlands Village Blvd #8, Flagstaff, AZ 86001",
+    "tel":"(928) 556-0019"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6508028,35.1963211 ]
+    },
+    "properties": {
+    "restaurant":"Macy's Eurpean Coffeehouse",
+    "address":"14 Beaver St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-2243"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6504433,35.1923208 ]
+    },
+    "properties": {
+    "restaurant":"The Mayor",
+    "address":"409 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-3846"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6611679,35.1829672 ]
+    },
+    "properties": {
+    "restaurant":"Campus Coffee Bean and Grill",
+    "address":"1800 S Milton Rd, Flagstaff, AZ 86001",
+    "tel":"(928) 556-0660"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.649623,35.199469 ]
+    },
+    "properties": {
+    "restaurant":"Dark Sky Brewing Co.",
+    "address":"117 N Beaver St A, Flagstaff, AZ 86001",
+    "tel":"(928) 235-4525"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.649677,35.1997499 ]
+    },
+    "properties": {
+    "restaurant":"India Palace",
+    "address":"103 W Birch Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 774-0081"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6472155,35.1979124 ]
+    },
+    "properties": {
+    "restaurant":"Mozelle's Downtown Bakery",
+    "address":"111 E Aspen Ave, Flagstaff, AZ 86001",
+    "tel":"(928) 607-7855"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6490695,35.1952937 ]
+    },
+    "properties": {
+    "restaurant":"Root Public House",
+    "address":"101 S San Francisco St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-1402"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6417381,35.1915515 ]
+    },
+    "properties": {
+    "restaurant":"Pita Jungle",
+    "address":"320 Regent St, Flagstaff, AZ 86001",
+    "tel":"(928) 774-0086"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6599146,35.1864606 ]
+    },
+    "properties": {
+    "restaurant":"Oscars Burritos Fiesta",
+    "address":"1500 South Riordan Ranch Street, Flagstaff, AZ 86001",
+    "tel":"(928) 774-3600"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6613141,35.187664 ]
+    },
+    "properties": {
+    "restaurant":"Lone Spur Cafe",
+    "address":"1300 S Milton Rd, Flagstaff, AZ 86001",
+    "tel":"(928) 440-5330"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6634614,35.1873989 ]
+    },
+    "properties": {
+    "restaurant":"Hiro's Sushi",
+    "address":"1312 S Plaza Way, Flagstaff, AZ 86001",
+    "tel":"(928) 226-8030"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6617082,35.1863958 ]
+    },
+    "properties": {
+    "restaurant":"Hickory's Smokehouse BBQ",
+    "address":"1435 S Milton Rd, Flagstaff, AZ 86001",
+    "tel":"(928) 774-2278"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6242971,35.1923654 ]
+    },
+    "properties": {
+    "restaurant":"The Northern Pines Restaurant",
+    "address":"2200 E Butler Ave, Flagstaff, AZ 86004",
+    "tel":"(928) 266-1929"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6197422,35.191559 ]
+    },
+    "properties": {
+    "restaurant":"Western Gold Restaurant",
+    "address":"2515 East Butler Avenue, Flagstaff, AZ 86004",
+    "tel":"(928) 779-7979"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6429835,35.1912551 ]
+    },
+    "properties": {
+    "restaurant":"Grimaldi's Pizzeria",
+    "address":"601 Piccadilly Dr #55, Flagstaff, AZ 86001",
+    "tel":"(928) 774-9038"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6211394,35.2182007 ]
+    },
+    "properties": {
+    "restaurant":"Brandy's Restaurant & Bakery",
+    "address":"1500 E Cedar Ave, Flagstaff, AZ 86004",
+    "tel":"(928) 779-2187"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.3847983,35.38762219 ]
+    },
+    "properties": {
+    "restaurant":"Eat n' Run Route 66 Market & Cafe",
+    "address":"2400 Historic Rte 66, Flagstaff, AZ 86004",
+    "tel":"(928) 679-9818"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.5862801,35.2185747 ]
+    },
+    "properties": {
+    "restaurant":"Historic Brewing Company",
+    "address":"4366 E Huntington Dr, Flagstaff, AZ 86004",
+    "tel":"(855) 484-4677"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.5476732,35.26507619 ]
+    },
+    "properties": {
+    "restaurant":"The Horsemen Lodge Steakhouse",
+    "address":"8500 US-89, Flagstaff, AZ 86004",
+    "tel":"(928) 526-2655"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.5793985,35.21432 ]
+    },
+    "properties": {
+    "restaurant":"Oregano's Pizza Bistro",
+    "address":"980 N Country Club Dr, Flagstaff, AZ 86004",
+    "tel":"(928) 233-3000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.5764441,35.2123599 ]
+    },
+    "properties": {
+    "restaurant":"The Toasted Owl - East Side",
+    "address":"5200 E Cortland Blvd, Flagstaff, AZ 86004",
+    "tel":"(928) 526-0610"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7557912,34.8741109 ]
+    },
+    "properties": {
+    "restaurant":"Indian Gardens Cafe & Market",
+    "address":"3951 N State Rte 89A, Sedona, AZ 86336",
+    "tel":"(928) 282-7702"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7524593,34.87714221 ]
+    },
+    "properties": {
+    "restaurant":"Sedona Pizza Company",
+    "address":"320 N State Rte 89A, Sedona, AZ 86336",
+    "tel":"(928) 203-5656"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.852706,34.91396456 ]
+    },
+    "properties": {
+    "restaurant":"Tii Gavo at Enchantment Resort",
+    "address":"525 Boynton Canyon Road, Sedona, AZ 86336",
+    "tel":"(844) 244-9489"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.852706,34.91396456 ]
+    },
+    "properties": {
+    "restaurant":"Che Ah Chi",
+    "address":"525 Boynton Canyon Rd, Sedona, AZ 86336",
+    "tel":"(928) 204-6000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0741212,33.4491814 ]
+    },
+    "properties": {
+    "restaurant":"The Counter",
+    "address":"50 N Central Ave, Phoenix, AZ 85004",
+    "tel":"(602) 466-3411"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0798343,33.4549591 ]
+    },
+    "properties": {
+    "restaurant":"Cibo",
+    "address":"603 N 5th Ave, Phoenix, AZ 85003",
+    "tel":"(602) 441-2697"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0737781,33.44724022 ]
+    },
+    "properties": {
+    "restaurant":"The Strand",
+    "address":"2 E Jefferson St #113, Phoenix, AZ 85005",
+    "tel":"(602) 253-1600"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.074449,33.44714601 ]
+    },
+    "properties": {
+    "restaurant":"Grabbagreen",
+    "address":"50 W Jefferson St #120, Phoenix, AZ 85003",
+    "tel":"(602) 734-9200"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0737781,33.44724022 ]
+    },
+    "properties": {
+    "restaurant":"Squid Ink Sushi Bar",
+    "address":"2 E Jefferson St, Phoenix, AZ 85004",
+    "tel":"(602) 258-0510"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0724496,33.45686194 ]
+    },
+    "properties": {
+    "restaurant":"Matt's Big Breakfast",
+    "address":"825 North 1st Street, Phoenix, AZ 85004",
+    "tel":"(602) 254-1074"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0668548,33.4452075 ]
+    },
+    "properties": {
+    "restaurant":"Chase Field",
+    "address":"401 E Jefferson St, Phoenix, AZ 85004",
+    "tel":"(602) 462-6000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0473914,33.4692032 ]
+    },
+    "properties": {
+    "restaurant":"La Santisima Gourmet Taco Shop",
+    "address":"1919 North 16th Street, Phoenix, AZ 85006",
+    "tel":"(602) 254-6330"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0743024,33.4642665 ]
+    },
+    "properties": {
+    "restaurant":"The Old Spaghetti Factory",
+    "address":"1418 N. Central Ave., Phoenix, AZ 85004",
+    "tel":"(602) 257-0380"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0736831,33.47693239 ]
+    },
+    "properties": {
+    "restaurant":"Wild Thaiger",
+    "address":"2631 N Central Ave, Phoenix, AZ 85004",
+    "tel":"(602) 241-8995"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0760604,33.5096549 ]
+    },
+    "properties": {
+    "restaurant":"Flower Child",
+    "address":"100 E Camelback Rd, Phoenix, AZ 85012",
+    "tel":"(480) 212-0180"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.994038,33.47985394 ]
+    },
+    "properties": {
+    "restaurant":"Jewel's Bakery & Cafe",
+    "address":"4041 East Thomas Road, Phoenix, AZ 85018",
+    "tel":"(602) 714-5243"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0051964,33.4954703 ]
+    },
+    "properties": {
+    "restaurant":"The Stand Burgers & Tacos",
+    "address":"3538 E Indian School Rd, 3538 E Indian School Rd, Phoenix, AZ 85018",
+    "tel":"(602) 314-5259"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0650971,33.51203574 ]
+    },
+    "properties": {
+    "restaurant":"Pizza Heaven Bistro",
+    "address":"5150 N 7th St, Phoenix, AZ 85012",
+    "tel":"(602) 277-8800"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0016321,33.49507445 ]
+    },
+    "properties": {
+    "restaurant":"Beckett's Table",
+    "address":"3717 E Indian School Rd, Phoenix, AZ 85018",
+    "tel":"(602) 954-1700"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0279134,33.5108331 ]
+    },
+    "properties": {
+    "restaurant":"True Food Kitchen",
+    "address":"2502 E Camelback Rd, Phoenix, AZ 85016",
+    "tel":"(602) 774-3488"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0228517,33.5240838 ]
+    },
+    "properties": {
+    "restaurant":"Frank & Albert's",
+    "address":"2400 East Missouri Avenue, Phoenix, AZ 85016",
+    "tel":"(602) 381-7632"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0367987,33.50919132 ]
+    },
+    "properties": {
+    "restaurant":"Grassroots Kitchen & Tap",
+    "address":"2119 East Camelback Road, Phoenix, AZ 85016",
+    "tel":"(602) 368-8766"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0279134,33.5108331 ]
+    },
+    "properties": {
+    "restaurant":"Blanco Tacos + Tequila",
+    "address":"2502 East Camelback Road, Phoenix, AZ 85016",
+    "tel":"(602) 429-8000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0476651,33.52381425 ]
+    },
+    "properties": {
+    "restaurant":"Luci's Healthy Marketplace & Coffee Bar",
+    "address":"1590 E Bethany Home Rd, Phoenix, AZ 85014",
+    "tel":"(602) 773-1339"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9956782,33.5112778 ]
+    },
+    "properties": {
+    "restaurant":"Chelsea's Kitchen",
+    "address":"5040 N 40th St, Phoenix, AZ 85018",
+    "tel":"(602) 957-2555"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -112.0380859,33.50916986 ]
+    },
+    "properties": {
+    "restaurant":"Snooze, an A.M. Eatery",
+    "address":"2045 East Camelback Road, Town and Country, Phoenix, AZ 85016",
+    "tel":"(480) 725-8000"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9951049,33.4944912 ]
+    },
+    "properties": {
+    "restaurant":"The Vig",
+    "address":"4041 N 40th St, Phoenix, AZ 85018",
+    "tel":"(602) 553-7227"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9957533,33.5021338 ]
+    },
+    "properties": {
+    "restaurant":"La Grande Orange Grocery & Pizzeria",
+    "address":"4410 N 40th St, Phoenix, AZ 85018",
+    "tel":"(602) 840-7777"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9409339,33.4268982 ]
+    },
+    "properties": {
+    "restaurant":"Daily Jam",
+    "address":"310 S Mill Ave #A101, Tempe, AZ 85281",
+    "tel":"(480) 968-9288"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9740656,33.37812085 ]
+    },
+    "properties": {
+    "restaurant":"Aunt Chilada's Tempe",
+    "address":"2019 W Baseline Rd, Tempe, AZ 85283",
+    "tel":"(602) 431-6470"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9611743,33.3923116 ]
+    },
+    "properties": {
+    "restaurant":"Schlotzsky's",
+    "address":"1401 West Southern Avenue, Tempe, AZ 85282",
+    "tel":"(480) 966-7672"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9466093,33.42234201 ]
+    },
+    "properties": {
+    "restaurant":"Little Szechuan",
+    "address":"524 W University Dr, Tempe, AZ 85281",
+    "tel":"(480) 966-7660"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9505131,33.42182884 ]
+    },
+    "properties": {
+    "restaurant":"Cafe Lalibela Ethiopian Cuisine",
+    "address":"849 W University Dr, Tempe, AZ 85281",
+    "tel":"(480) 829-1939"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9758971,33.4950193 ]
+    },
+    "properties": {
+    "restaurant":"O.H.S.O. Eatery + nanoBrewery",
+    "address":"4900 E Indian School Rd, Phoenix, AZ 85018",
+    "tel":"(602) 955-0358"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9168762,33.4649279 ]
+    },
+    "properties": {
+    "restaurant":"Gluten Free Creations Bakery and Good Food Cafe",
+    "address":"7607 E McDowell Rd, Scottsdale, AZ 85257",
+    "tel":"(480) 990-2253"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9266906,33.4765132 ]
+    },
+    "properties": {
+    "restaurant":"Los Sombreros",
+    "address":"2534 North Scottsdale Road, Scottsdale, AZ 85257",
+    "tel":"(480) 994-1799"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9432355,33.4277339 ]
+    },
+    "properties": {
+    "restaurant":"Macayo's",
+    "address":"300 South Ash Avenue, Tempe, AZ 85281",
+    "tel":"(480) 966-6677"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9269555,33.4538136 ]
+    },
+    "properties": {
+    "restaurant":"green",
+    "address":"2240 N Scottsdale Rd, Tempe, AZ 85281",
+    "tel":"(480) 941-9003"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9648119,33.3789279 ]
+    },
+    "properties": {
+    "restaurant":"Claim Jumper",
+    "address":"1530 West Baseline Road, TEMPE, AZ",
+    "tel":"(480) 831-8200"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9404236,33.4226766 ]
+    },
+    "properties": {
+    "restaurant":"Mellow Mushroom",
+    "address":"740 S Mill Ave, Tempe, AZ 85281",
+    "tel":"(480) 967-6355"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9404236,33.4226766 ]
+    },
+    "properties": {
+    "restaurant":"P.F. Chang's",
+    "address":"740 S Mill Ave. #140, Tempe, AZ 85281",
+    "tel":"(480) 731-4600"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9358816,33.4223185 ]
+    },
+    "properties": {
+    "restaurant":"Original ChopShop",
+    "address":"222 E University Dr, Tempe, AZ 85281",
+    "tel":"(480) 307-9336"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9278083,33.4927065 ]
+    },
+    "properties": {
+    "restaurant":"Malee's Thai Bistro",
+    "address":"7131 East Main Street, Scottsdale, AZ 85251",
+    "tel":"(480) 947-6042"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9373929,33.423548 ]
+    },
+    "properties": {
+    "restaurant":"House of Tricks",
+    "address":"114 E 7th St, Tempe, AZ 85281",
+    "tel":"(480) 968-1114"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9265868,33.4858977 ]
+    },
+    "properties": {
+    "restaurant":"U.S. Egg",
+    "address":"3238 N Scottsdale Rd, Scottsdale, AZ 85251",
+    "tel":"(480) 947-7344"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9249909,33.4933356 ]
+    },
+    "properties": {
+    "restaurant":"Top Marks Cafe",
+    "address":"7240 E Main St, Scottsdale, AZ 85251",
+    "tel":"(480) 219-8744"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.919708,33.42247505 ]
+    },
+    "properties": {
+    "restaurant":"Chompies",
+    "address":"1160 E University Dr, Tempe, AZ 85281",
+    "tel":"(480) 557-0700"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9257978,33.4771797 ]
+    },
+    "properties": {
+    "restaurant":"D'Lish Drive Thru",
+    "address":"2613 N Scottsdale Rd, Scottsdale, AZ 85257",
+    "tel":"(480) 247-8537"
+    }
+  }
+
+]
+};
+// end of data//////////////////////////////////////////////////////////////////////////
+
+var myIcon = new L.Icon({
+    iconUrl: "resIcon.png",
+    iconSize: [25, 25],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76]
+});
+
+
+function createFeatures (feature,layer){
+    layer.bindPopup("<h3>" + feature.properties.restaurant +
+      "</h3><br>" + feature.properties.address + "</br>" + "<br>" +  feature.properties.tel + "</br>");
+    layer.setIcon(myIcon);
+}
+
+// read the Json file
+L.geoJson(geoJsonFeature, {
+	// pointToLayer: function (feature, latlng) {
+	// 	return L.circleMarker(latlng, geojsonMarkerOptions);
+  // }
+    onEachFeature: createFeatures
+}).addTo(map);
+
+
 </script>
 
+<!-- Json file -->
+<!-- <script type="text/javascript" src="Geojsonrest.js"></script> -->
 </body>
 
 </html>
